@@ -7,10 +7,8 @@ import {
   HomeTitle,
 } from "./styles";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-import useLocalStorage from "../hooks/useLocalStorage";
 
 import { useList } from "../services/getPhones";
 
@@ -21,20 +19,10 @@ export default function Home() {
   const list = useList();
   const path = location.pathname.toString().replace(/[^0-9]/g, "");
 
-  const [userContact, setUserContact] = useLocalStorage("userContact", null);
-
-  const contact = () => {
-    if (path.length < 5 && userContact === null) {
-      setUserContact("912896548");
-    } else if (path.length > 5) {
-      setUserContact(location.pathname.toString().replace(/[^0-9]/g, ""));
-    }
-  };
-
   useEffect(() => {
     document.body.style = "background: #1d1d1d;";
     list.getList();
-    contact();
+    list.getContact(path);
   }, []);
 
   return (
@@ -61,7 +49,8 @@ export default function Home() {
                   model: item.modelo,
                   gb: item.gb,
                   price: item.valor,
-                  contact: userContact,
+                  bat: item.bat,
+                  contact: list.contact,
                 }}
               >
                 <span key={index - 1}>
