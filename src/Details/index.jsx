@@ -7,29 +7,26 @@ import {
   BuyButtonContainer,
   BuyButton,
 } from "./styles";
-
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
-
-import { useList } from "../services/getPhones";
+import phonesList from "../services/phonesList.json"
 import { imagesList } from "./imagesList";
 
 export default function Details() {
-  const navigate = useNavigate();
   const location = useLocation();
-  const list = useList();
+
+  const path = location.pathname.toString().substring(0,24)
 
   const imei = location.state
     ? location.state.imei
-    : location.pathname.toString().replace(/[^0-9]/g, "");
+    : path.replace(/[^0-9]/g, "");
 
   const [count, setCount] = useState(0);
   const image = imagesList(imei)[count];
 
   const message = location.state
-    ? `https://api.whatsapp.com/send?phone=351${list.contact}&text=Ol%C3%A1%2C%20me%20interessei%20pelo%20${location.state.model}%20${location.state.gb}gb`
+    ? `https://api.whatsapp.com/send?phone=351912896548&text=Ol%C3%A1%2C%20me%20interessei%20pelo%20${location.state.model}%20${location.state.gb}gb`
     : "";
 
   const nextImage = () => {
@@ -50,12 +47,6 @@ export default function Details() {
 
   useEffect(() => {
     document.body.style = "background: #1d1d1d;";
-    if (location.state === null) {
-      list.getList();
-    }
-    if (list.contact === null) {
-      list.getContact("920286831");
-    }
   }, []);
 
   return (
@@ -78,19 +69,19 @@ export default function Details() {
             {location.state.model} {location.state.gb}gb / bateria em{" "}
             {location.state.bat} - {location.state.price}
           </p>
-        ) : (
-          list.phonesList
-            .filter((item, idx) => item.imei === imei)
+        ) : (<>
+          {
+        phonesList.table.filter((item, idx) => item.imei === imei)
             .map((item, index) => (
               <p key={index}>
                 {item.modelo} {item.gb}gb / bateria em {item.bat} - {item.valor}
               </p>
-            ))
+            ))}</>
         )}
         <BuyButtonContainer>
           <a href={message}>
             <BuyButton>
-              <p>Compre Agora!</p>
+              <p>Compre Agora!!</p>
             </BuyButton>
           </a>
         </BuyButtonContainer>

@@ -83,3 +83,15 @@ export const ListComponent = styled.div`
 export const LogoImg = styled.img`
   width: 25vh;
 `;
+
+export const SearchBar = styled.input`
+margin-top: 20px;
+text-align: center;
+  width: 30vw;
+  height: 7vh;
+  @media (max-width: 500px) {
+    height: 5vh;
+    width: 70vw;
+    }
+`;
+
