@@ -18,13 +18,13 @@ const getDoc = async () => {
 function fileExists(imei) {
   let result = false;
   list = [
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/tras.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/frenteOn.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/frenteOff.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/cima.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/baixo.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/lado1.jpg`,
-    `../2ndLifeShop/src/assets/phonesPics/${imei}/lado2.jpg`,
+    `../front/src/assets/phonesPics/${imei}/tras.jpg`,
+    `../front/src/assets/phonesPics/${imei}/frenteOn.jpg`,
+    `../front/src/assets/phonesPics/${imei}/frenteOff.jpg`,
+    `../front/src/assets/phonesPics/${imei}/cima.jpg`,
+    `../front/src/assets/phonesPics/${imei}/baixo.jpg`,
+    `../front/src/assets/phonesPics/${imei}/lado1.jpg`,
+    `../front/src/assets/phonesPics/${imei}/lado2.jpg`,
   ];
   list.map((file) => {
     if (fs.existsSync(file)) {
@@ -67,7 +67,7 @@ function saveData(){
           console.error("Arquivo de erros salvo com sucesso");
         });
       }
-      fs.writeFile("../2ndLifeShop/src/services/phonesList.json", `{"table":${JSON.stringify(table)}}`, (error) => {
+      fs.writeFile("../front/src/services/phonesList.json", `{"table":${JSON.stringify(table)}}`, (error) => {
         if (error) {
           console.error(error);
           console.error("Erro ao salvar arquivo JSON");

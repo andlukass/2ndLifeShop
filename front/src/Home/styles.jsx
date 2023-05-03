@@ -41,12 +41,9 @@ export const HomeContainer = styled.div`
 
 export const HomeTitle = styled.div`
   margin-bottom: 20px;
-  margin-left: 29px;
   margin-top: 20px;
   background-color: #d49f54;
-  width: 480px;
   height: 50px;
-  display: flex;
   justify-content: center;
   align-items: center;
   p {

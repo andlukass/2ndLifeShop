@@ -1,5 +1,6 @@
-cd C:\Users\ACER\Desktop\site\2ndLifeApi
+cd api
 call node index.js
-cd C:\Users\ACER\Desktop\site\2ndLifeShop
+cd ..
+cd front
 call npm run build
 npx firebase deploy
