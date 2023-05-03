@@ -4,13 +4,13 @@ Catálogo para loja de SmartPhones.
 ## Configuração
 Deve ser associado à uma conta do Firebase e fornecer os dados da sheet de onde o index.js irá retirar os dados dos SmartPhones, deverá ser criada uma pasta  "phonePics" dentro de src/assets onde irá conter fotos dos mesmos, separados por pastas com os devidos IMEIs.
 Deverá conter os seguintes itens:
-tras.jpg
-frenteOff.jpg
-frenteOn.jpg
-lado1.jpg
-lado2.jpg
-baixo.jpg
-cima.jpg
+tras.jpg  
+frenteOff.jpg  
+frenteOn.jpg  
+lado1.jpg  
+lado2.jpg  
+baixo.jpg  
+cima.jpg  
 
 ## Como atualizar
 Ao clicar em attSite.bat irá rodar o index.js da API para buscar as informações dos SmartPhones e salvar dentro da pasta do front-end, além de verificar a existencia das fotos referentes ao IMEI, salvando o arquivo "errors.txt" com quais IMEIs faltam fotos, deixando no site somente os sem erros.
