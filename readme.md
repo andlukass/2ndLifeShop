@@ -1,9 +1,9 @@
-# 2ND LIFE MOBILE
-Catálogo para loja de SmartPhones.
+# 2ND LIFE MOBILE SHOP
+Catalog for a Smartphones store.
 
-## Configuração
-Deve ser associado à uma conta do Firebase e fornecer os dados da sheet de onde o index.js irá retirar os dados dos SmartPhones, deverá ser criada uma pasta  "phonePics" dentro de src/assets onde irá conter fotos dos mesmos, separados por pastas com os devidos IMEIs.
-Deverá conter os seguintes itens:
+## Configuration
+You need to edit the index.js with the sheet you want to get the smartphone data from. Create a folder "phonePics" inside src/assets, which will contain photos of the phones, separated into folders with the respective IMEIs.
+It should contain the following items:<br>
 tras.jpg  
 frenteOff.jpg  
 frenteOn.jpg  
@@ -12,13 +12,10 @@ lado2.jpg
 baixo.jpg  
 cima.jpg  
 
-## Como atualizar
-Ao clicar em attSite.bat irá rodar o index.js da API para buscar as informações dos SmartPhones e salvar dentro da pasta do front-end, além de verificar a existencia das fotos referentes ao IMEI, salvando o arquivo "errors.txt" com quais IMEIs faltam fotos, deixando no site somente os sem erros.
+## How to update
+If you are on Windoes you can double click on attSite.bat, the API's index.js will run to fetch information about Smartphones and save it within the front-end folder. It will also check for the existence of photos related to the IMEI, saving the "errors.txt" file with the IMEIs lacking photos, leaving only those without errors on the site.
 
-## Mudar Smartphones disponíveis e preços
-A API busca em uma Google Sheet(que deve ser configurada no index.js da API) e lê linha por linha as caracteristicas(preço, % da bateria, modelo, etc). Basta alterar as informações da sheet e rodar o bat para atualizar o site (é preciso conter todas as fotos do Smartphone para que ele apareça no site).
-
-## Exemplo funcional
+## Functional example
 https://2ndlifemobile.shop
 
 
